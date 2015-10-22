@@ -52,51 +52,24 @@
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
+
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/adLayout"
-android:orientation="horizontal"
+    <RelativeLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/adView"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="0.1"
+        android:layout_margin="5dp"
+        android:orientation="horizontal"
         android:gravity="center"
-        android:layout_alignParentBottom="true" >
-
-        <TextView
-            android:id="@+id/azimuth"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="#ffffff"
-            android:textSize="15sp"
-            android:text="sdsds"
-
-            />
-        <TextView
-            android:id="@+id/pitch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="dsfgf"
-            android:layout_marginLeft="5dp"
-            android:textColor="#ffffff"
-            android:textSize="15sp"/>
-
-        <TextView
-            android:id="@+id/roll"
-android:layout_marginLeft="5dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-android:text="sds"
-            android:textColor="#ffffff"
-            android:textSize="15sp"/>
-        <TextView
-            android:id="@+id/roll1"
-            android:layout_marginLeft="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="sdsfdf"
-            android:textColor="#ffffff"
-            android:textSize="15sp"/>
-
-        </LinearLayout>
-
+        android:background="#ffffff">
+    </RelativeLayout>
+    <!--<TextView-->
+        <!--android:layout_alignParentBottom="true"-->
+        <!--android:layout_width="fill_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="#ffffff"-->
+        <!--android:text="ssds"/>-->
 </RelativeLayout>

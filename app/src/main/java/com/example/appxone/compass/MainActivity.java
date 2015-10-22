@@ -4,8 +4,10 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 import com.example.appxone.compass.R;
-import com.google.ads.AdRequest;
-import com.google.ads.AdSize;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+
 //import com.google.ads.AdView;
 
 import android.graphics.Typeface;
@@ -52,6 +54,18 @@ int gg;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+        AdView mAdView = new AdView(getApplicationContext());
+        String ad_Id = getString(R.string.banner_ad_unit_id);
+        LinearLayout relativeLayout = (LinearLayout) findViewById(R.id.adView);
+        relativeLayout.addView(mAdView);
+        mAdView.setAdUnitId(ad_Id);
+        mAdView.setAdSize(AdSize.BANNER);
+        AdRequest adRequest = new AdRequest.Builder()
+                .build();
+        mAdView.loadAd(adRequest);
+
         textviewAzimuth = (TextView) findViewById(R.id.azimuth);
 
         textviewPitch = (TextView) findViewById(R.id.pitch);
@@ -231,52 +245,52 @@ if(ll=="0")
     };
 
     private String getDirectionFromDegrees(float degrees) {
-        if (degrees > 354.38 || degrees < 16.87) {
+        if (degrees > 354.38 || degrees < 5.62) {
             return "N";
         }
-        if (degrees > 16.88 && degrees < 39.37) {
+        if (degrees > 16.88 && degrees < 28.12) {
             return "NNE";
         }
-        if (degrees > 39.38 && degrees < 61.87) {
+        if (degrees > 39.38 && degrees < 50.62) {
             return "NE";
         }
-        if (degrees > 61.88 && degrees < 84.37) {
+        if (degrees > 61.88 && degrees < 73.12) {
             return "ENE";
         }
-        if (degrees > 84.38 && degrees < 106.87) {
+        if (degrees > 84.38 && degrees < 95.62) {
             return "E";
         }
-        if (degrees > 106.88 && degrees < 129.37) {
+        if (degrees > 106.88 && degrees < 118.12) {
             return "ESE";
         }
-        if (degrees > 129.38 && degrees < 151.87) {
+        if (degrees > 129.38 && degrees < 140.62) {
             return "SE";
         }
-        if (degrees > 151.88 && degrees < 174.37) {
+        if (degrees > 151.88 && degrees < 163.12) {
             return "SSE";
         }
-        if (degrees > 174.38 && degrees < 196.87) {
+        if (degrees > 174.38 && degrees < 185.62) {
             return "S";
         }
-        if (degrees > 196.88 && degrees < 219.37) {
+        if (degrees > 196.88 && degrees < 208.12) {
             return "SSW";
         }
-        if (degrees > 219.38 && degrees < 241.87) {
+        if (degrees > 219.38 && degrees < 230.62) {
             return "SW";
         }
-        if (degrees > 241.88 && degrees < 264.37) {
+        if (degrees > 241.88 && degrees < 253.12) {
             return "WSW";
         }
-        if (degrees > 264.38 && degrees < 286.87) {
+        if (degrees > 264.38 && degrees < 275.62) {
             return "W";
         }
-        if (degrees > 286.88 && degrees < 309.37) {
-            return "NWN";
+        if (degrees > 286.88 && degrees < 298.12) {
+            return "WNW";
         }
-        if (degrees > 309.38 && degrees < 331.87) {
+        if (degrees > 309.38 && degrees < 320.62) {
             return "NW";
         }
-        if (degrees > 331.88 && degrees < 354.37) {
+        if (degrees > 331.88 && degrees < 343.12) {
             return "NNW";
         }
 
