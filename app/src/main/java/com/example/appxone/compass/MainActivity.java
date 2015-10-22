@@ -32,7 +32,7 @@ public class MainActivity extends Activity {
     float microtesls;
     private static SensorManager mSensorManager;
 
-    TextView textviewAzimuth, textviewPitch, textviewRoll;
+    TextView textviewAzimuth, textviewPitch, textviewRoll,roll1;
     public Sensor mSensor;
     TextView angleTextview, diemension;
     ImageView imageView, nidleImageView;
@@ -56,6 +56,7 @@ int gg;
 
         textviewPitch = (TextView) findViewById(R.id.pitch);
         textviewRoll = (TextView) findViewById(R.id.roll);
+        roll1 = (TextView) findViewById(R.id.roll1);
         context = this;
         //AdView adView = null;
 
@@ -101,7 +102,7 @@ int gg;
 
         if (mSensor != null) {
             mSensorManager.registerListener(mySensorEventListener, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
+                    SensorManager.SENSOR_DELAY_FASTEST);
             Log.i("Compass MainActivity", "Registerered for ORIENTATION Sensor");
 
         } else {
@@ -137,18 +138,31 @@ int gg;
 
             //degree_convert	=microtesls;
 
-            //Math.toDegrees(degree_convert);
-            if (degree_convert < 0) {
+
+
+
+
+
+
+
+
+
+
+
+
+
+            if (degree_convert <= 0) {
               //  Log.i("minus", "minus");
 
-                multiply = check * degree_convert;
-                //imageView.setRotation((float)multiply);
+                multiply = (-1.0) * degree_convert;
 
-//                else
-//{
-//    gg=0;
-//}
 
+                String ll=String.format("%.0f", multiply);
+                        roll1.setText(ll);
+if(ll=="0")
+{
+    gg=1;
+}
                 String value = getDirectionFromDegrees((float) multiply);
                 angleTextview.setText(String.format("%.0f", multiply) + " " + value);
 
@@ -156,23 +170,22 @@ int gg;
                 textviewAzimuth.setText("Azimuth: " + String.format("%.0f", multiply) + "");
                 textviewPitch.setText(" Pitch: " + String.format("%.0f", event.values[1]) + "");
                 textviewRoll.setText(" Roll: " + String.format("%.0f", event.values[2]) + "");
-                //Log.e("Diemension", value);
-            } else if (degree_convert >= 0) {
-              //  Log.i("plus", "plus");
+            } else if (degree_convert > 0) {
 
-                if (multiply <= 1) {
+               // if (gg == 1) {
                     add = 360 - degree_convert;
-                    //add = minus + multiply;
+                    String value = getDirectionFromDegrees((float) add);
+                    angleTextview.setText(String.format("%.0f", add) + " " + value);
 
-                }
-                else if (multiply <= 180) {
-                    minus = multiply - degree_convert;
-                    add = minus + multiply;
-                }            //	imageView.setRotation((float)add);
+                //}
+//                else {
+//                    minus = multiply - degree_convert;
+//                    add = minus + multiply;
+//                }
 
 
-                String value = getDirectionFromDegrees((float) add);
-                angleTextview.setText(String.format("%.0f", add) + " " + value);
+
+
 
 
                 textviewAzimuth.setText("Azimuth: " + String.format("%.0f", add) + "");
@@ -180,13 +193,33 @@ int gg;
                 textviewRoll.setText(" Roll: " + String.format("%.0f", event.values[2]) + "");
 
             }
-//
 
-//			imageView.setRotation((float)degree_convert);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		//	imageView.setRotation((float)degree_convert);
 
 //			String value=getDirectionFromDegrees((float)degree_convert);
 //			//Log.e("Diemension", value);
-
+//
 //			angleTextview.setText(String.format("%.0f", degree_convert) + " " + value);
 //
 //
