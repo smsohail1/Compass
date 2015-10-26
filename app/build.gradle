@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.appxone.compass"
+        applicationId "com.appinhand.compass"
         minSdkVersion 11
         targetSdkVersion 23
         versionCode 1
