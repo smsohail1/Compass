@@ -2,13 +2,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg" >
+    android:background="@drawable/bg">
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" >
+        android:layout_centerInParent="true">
 
         <TextView
             android:id="@+id/degreeText"
@@ -16,8 +16,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginBottom="5dp"
-            android:textSize="46sp"
             android:textColor="#ffffff"
+            android:textSize="46sp"
 
             />
 
@@ -29,8 +29,8 @@
             android:layout_toRightOf="@id/degreeText"
             android:paddingLeft="10dp"
             android:paddingTop="2dp"
-            android:textSize="40sp"
             android:textColor="#ffffff"
+            android:textSize="40sp"
 
             />
 
@@ -38,7 +38,7 @@
             android:id="@+id/niddle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/degreeText" >
+            android:layout_below="@id/degreeText">
 
             <ImageView
                 android:id="@+id/rotation_Image"
@@ -55,21 +55,23 @@
 
     </RelativeLayout>
 
+    <!--<RelativeLayout-->
+    <!--android:layout_alignParentBottom="true"-->
+    <!--android:id="@+id/adView"-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--android:layout_weight="0.1"-->
+    <!--android:layout_margin="5dp"-->
+    <!--android:orientation="horizontal"-->
+    <!--android:gravity="center"-->
+    <!--android:background="#ffffff">-->
+    <!--</RelativeLayout>-->
+
+
     <RelativeLayout
-        android:layout_alignParentBottom="true"
         android:id="@+id/adView"
         android:layout_width="fill_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1"
-        android:layout_margin="5dp"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:background="#ffffff">
-    </RelativeLayout>
-    <!--<TextView-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textColor="#ffffff"-->
-        <!--android:text="ssds"/>-->
+        android:layout_height="wrap_content"
+android:gravity="center"
+        android:layout_alignParentBottom="true"></RelativeLayout>
 </RelativeLayout>

@@ -1,9 +1,5 @@
 package com.example.appxone.compass;
 
-import java.text.DecimalFormat;
-import java.util.List;
-
-import com.example.appxone.compass.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
@@ -16,7 +12,6 @@ import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.provider.ContactsContract.CommonDataKinds.Event;
 import android.app.Activity;
 import android.content.Context;
 import android.util.Log;
@@ -58,19 +53,19 @@ int gg;
 
         AdView mAdView = new AdView(getApplicationContext());
         String ad_Id = getString(R.string.banner_ad_unit_id);
-        LinearLayout relativeLayout = (LinearLayout) findViewById(R.id.adView);
+        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.adView);
         relativeLayout.addView(mAdView);
         mAdView.setAdUnitId(ad_Id);
         mAdView.setAdSize(AdSize.BANNER);
         AdRequest adRequest = new AdRequest.Builder()
                 .build();
         mAdView.loadAd(adRequest);
-
-        textviewAzimuth = (TextView) findViewById(R.id.azimuth);
-
-        textviewPitch = (TextView) findViewById(R.id.pitch);
-        textviewRoll = (TextView) findViewById(R.id.roll);
-        roll1 = (TextView) findViewById(R.id.roll1);
+//
+//        textviewAzimuth = (TextView) findViewById(R.id.azimuth);
+//
+//        textviewPitch = (TextView) findViewById(R.id.pitch);
+//        textviewRoll = (TextView) findViewById(R.id.roll);
+//        roll1 = (TextView) findViewById(R.id.roll1);
         context = this;
         //AdView adView = null;
 
@@ -78,7 +73,10 @@ int gg;
         //String publisherId = "a1526296aef0e80";
         //	String testingDeviceId = "359918043312594";
 
-        adlayout = (LinearLayout) findViewById(R.id.adLayout);
+       // adlayout = (LinearLayout) findViewById(R.id.adLayout);
+
+
+
         // Get Screen
         Display display = ((WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
@@ -172,7 +170,7 @@ int gg;
 
 
                 String ll=String.format("%.0f", multiply);
-                        roll1.setText(ll);
+                      //  roll1.setText(ll);
 if(ll=="0")
 {
     gg=1;
@@ -181,9 +179,9 @@ if(ll=="0")
                 angleTextview.setText(String.format("%.0f", multiply) + " " + value);
 
 
-                textviewAzimuth.setText("Azimuth: " + String.format("%.0f", multiply) + "");
-                textviewPitch.setText(" Pitch: " + String.format("%.0f", event.values[1]) + "");
-                textviewRoll.setText(" Roll: " + String.format("%.0f", event.values[2]) + "");
+//                textviewAzimuth.setText("Azimuth: " + String.format("%.0f", multiply) + "");
+  //              textviewPitch.setText(" Pitch: " + String.format("%.0f", event.values[1]) + "");
+    //            textviewRoll.setText(" Roll: " + String.format("%.0f", event.values[2]) + "");
             } else if (degree_convert > 0) {
 
                // if (gg == 1) {
@@ -202,9 +200,9 @@ if(ll=="0")
 
 
 
-                textviewAzimuth.setText("Azimuth: " + String.format("%.0f", add) + "");
-                textviewPitch.setText(" Pitch: " + String.format("%.0f", event.values[1]) + "");
-                textviewRoll.setText(" Roll: " + String.format("%.0f", event.values[2]) + "");
+//                textviewAzimuth.setText("Azimuth: " + String.format("%.0f", add) + "");
+  //              textviewPitch.setText(" Pitch: " + String.format("%.0f", event.values[1]) + "");
+    //            textviewRoll.setText(" Roll: " + String.format("%.0f", event.values[2]) + "");
 
             }
 
